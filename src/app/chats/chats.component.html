@@ -1,0 +1,67 @@
+<div id="pagecontainer" class="container">
+
+	<div id="chatcontainer" class="container">
+		<!-- This div contains the navigator section -->
+		<div id="contacts" class="container">
+
+			<!-- This div contains the icons component -->
+			<div id="icons">
+				<div id="icon1" class="container">
+					<label>
+						<img class ="iconsize "  src="../assets/chats.png" />
+					</label>
+				</div>
+				<div id="icon2" class="container">
+					<label>
+						<img class="iconsize " src="../assets/contacts.png" />
+					</label>
+				</div>
+				<div id="icon3" class="container">
+					<label>
+						<img class="iconsize " src="../assets/search.png" />
+					</label>
+				</div>
+			</div>
+			<!-- This div contains the messages, contacts or search component -->
+			<div id="smallcontainer">
+
+				<!-- Displaying messages from messages array -->
+
+				<mat-card class="example-card"*ngFor="let message of lastMessages" (click)="selectContact(message.user2)" >
+				  <mat-card-header >
+				    <div mat-card-avatar class="example-header-image" ></div>
+				    <mat-card-title>{{message.user2}}</mat-card-title>
+				    <mat-card-subtitle>{{message.lastMessage}}</mat-card-subtitle>
+				  </mat-card-header>
+				</mat-card>
+
+				<!-- Displaying contacts from contacts array -->
+
+				<!-- <mat-card class="example-card"*ngFor="let contact of contacts" >
+				  <mat-card-header >
+				    <div mat-card-avatar class="example-header-image" ></div>
+				    <mat-card-title>{{contact.name}}</mat-card-title>
+				  </mat-card-header>
+				</mat-card> -->
+			</div>
+		</div>
+
+		<!-- This div contains the part where the chat itself will appear -->
+		<div id="chats" class="container">
+			<div id="chatheader">
+				<mat-card id = "contactname">
+					{{selectedContact}}
+				</mat-card>
+			</div>
+			<div id="chatcontent">
+				
+			</div>
+			<div id="send">
+				<mat-card id = "sendcard">
+					<textarea></textarea>
+					<button id="sendbutton">Send</button>
+				</mat-card>
+			</div>
+		</div>
+	</div>
+</div>
